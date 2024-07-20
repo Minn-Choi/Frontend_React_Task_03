@@ -4,7 +4,7 @@ import {
   BtnWrapper,
   BtnContainer,
   GetWrapper,
-  GetTitle,
+  GetTitle, 
   GetBody,
   GetId,
 } from "./Styled";

@@ -1,5 +1,27 @@
+import { useState } from 'react';
+import NewsApi from './NewsApi';
+import NewsCard from './NewsCard';
+import NewsHeader from './NewsHeader';
+
+
 const NewsList = () => {
-  return <p>여기서 작업하시면 됩니당</p>;
+  const [articles, setArticles] = useState([]);
+
+  const handleDataFetched = (fetchedArticles) => {
+    setArticles(fetchedArticles);
+  };
+
+  return (
+    <div>
+      <NewsHeader />
+        <NewsApi onDataFetched={handleDataFetched} />
+        <div>
+          {articles.map((article, index) => (
+            <NewsCard key={index} article={article} />
+          ))}
+        </div>
+    </div>
+  );
 };
 
 export default NewsList;
